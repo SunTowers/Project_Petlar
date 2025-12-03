@@ -20,9 +20,8 @@
 </head>
 <body>
 
-  <!-- NAVBAR FIXA -->
-  <div id="navbar-placeholder"></div>
-  <script src="../componentes/navbar.js"></script>
+    <!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
 
   <!-- TÍTULO -->
   <section class="text-center container mb-5">
@@ -85,6 +84,15 @@
       <!-- Mais cards podem ser adicionados dinamicamente no futuro -->
     </div>
   </section>
+  <script src="../js/auth.js"></script>
+  <script>
+    fetch("../componentes/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-placeholder").innerHTML = html;
+        atualizarNavbar(); // <-- ESSENCIAL
+      });
+  </script>
 
 </body>
 </html>
