@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petlar - Cadastrar Pet</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body { background-color: #f8f9fa; padding-top: 80px; }
+    .section-card { border-left: 5px solid #198754; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FIXA -->
+  <div id="navbar-placeholder"></div>
+  <script src="../componentes/navbar.js"></script>
+
+  <!-- TÍTULO -->
+  <section class="text-center container mb-5">
+    <h1 class="fw-bold">Cadastre Seu Pet para Adoção</h1>
+    <h2 class="mt-3 text-muted">
+      Ajude seu querido pet a encontrar um novo lar amoroso. Forneça informações detalhadas e precisas para ajudar os adotantes em potencial a tomar a melhor decisão.
+    </h2>
+  </section>
+
+  <div class="container mb-5">
+
+    <!-- 1. FOTOS DO PET -->
+    <div class="card p-4 shadow-sm mb-4 section-card">
+      <h4 class="fw-bold mb-3">Fotos do Pet</h4>
+      <p class="text-muted">Envie fotos claras e de alta qualidade do seu pet. A primeira foto será usada como imagem principal.</p>
+
+      <input class="form-control" type="file" multiple accept="image/*">
+    </div>
+
+
+    <!-- 2. INFORMAÇÕES BÁSICAS -->
+    <div class="card p-4 shadow-sm mb-4 section-card">
+      <h4 class="fw-bold mb-3">Informações Básicas</h4>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">Nome</label>
+          <input type="text" class="form-control" placeholder="Ex: Thor">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Tipo</label>
+          <input type="text" class="form-control" placeholder="Ex: Cachorro, Gato">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Raça</label>
+          <input type="text" class="form-control" placeholder="Ex: Vira-lata, Siamês">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Idade</label>
+          <input type="text" class="form-control" placeholder="Ex: 2 anos">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Sexo</label>
+          <input type="text" class="form-control" placeholder="Ex: Macho / Fêmea">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Porte</label>
+          <input type="text" class="form-control" placeholder="Ex: Pequeno, Médio, Grande">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 3. INFORMAÇÕES DE SAÚDE -->
+    <div class="card p-4 shadow-sm mb-4 section-card">
+      <h4 class="fw-bold mb-3">Informações de Saúde</h4>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="vacinacao">
+        <label class="form-check-label" for="vacinacao">Vacinação em dia</label>
+      </div>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="castrado">
+        <label class="form-check-label" for="castrado">Castrado</label>
+      </div>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="microchipado">
+        <label class="form-check-label" for="microchipado">Microchipado</label>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="checkup">
+        <label class="form-check-label" for="checkup">Checkup veterinário recente</label>
+      </div>
+
+      <label class="form-label mt-2">Descrição adicional</label>
+      <textarea class="form-control" rows="3" placeholder="Escreva aqui informações importantes sobre a saúde."></textarea>
+    </div>
+
+
+    <!-- 4. COMPORTAMENTO E PERSONALIDADE -->
+    <div class="card p-4 shadow-sm mb-4 section-card">
+      <h4 class="fw-bold mb-3">Comportamento e Personalidade</h4>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="brincalhao">
+        <label class="form-check-label" for="brincalhao">Brincalhão</label>
+      </div>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="quieto">
+        <label class="form-check-label" for="quieto">Quieto</label>
+      </div>
+
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="truques">
+        <label class="form-check-label" for="truques">Sabe truques</label>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="apartamento">
+        <label class="form-check-label" for="apartamento">Acostumado com apartamento</label>
+      </div>
+
+      <label class="form-label mt-2">Descrição adicional</label>
+      <textarea class="form-control" rows="3" placeholder="Conte mais sobre a personalidade."></textarea>
+    </div>
+
+
+    <!-- 5. INFORMAÇÕES DE CONTATO -->
+    <div class="card p-4 shadow-sm mb-4 section-card">
+      <h4 class="fw-bold mb-3">Informações de Contato</h4>
+
+      <div class="row g-3 mb-3">
+        <div class="col-md-3">
+          <label class="form-label">Seu Nome</label>
+          <input type="text" class="form-control" placeholder="Seu nome completo">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">E-mail</label>
+          <input type="email" class="form-control" placeholder="seuemail@email.com">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Telefone</label>
+          <input type="text" class="form-control" placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Localização</label>
+          <input type="text" class="form-control" placeholder="Cidade - Estado">
+        </div>
+      </div>
+
+      <label class="form-label">Mensagem adicional</label>
+      <textarea class="form-control" rows="3" placeholder="Observações sobre como entrar em contato."></textarea>
+    </div>
+
+
+    <!-- Botao de cadastro-->
+    <div class="text-center">
+      <button class="btn btn-success btn-lg px-5">Cadastrar Pet para Adoção</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

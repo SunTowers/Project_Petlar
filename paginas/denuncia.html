@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petlar - Denunciar Maus-Tratos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body { background-color: #f8f9fa; padding-top: 80px; }
+    .alerta-box i { font-size: 2rem; color: #dc3545; }
+    .info-card { border-left: 4px solid #198754; }
+    .org-card img { height: 160px; object-fit: cover; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+  <script src="../componentes/navbar.js"></script>
+
+  <!-- TÍTULO -->
+  <section class="text-center container mb-5">
+    <h1 class="fw-bold">Denunciar Maus-Tratos Animais</h1>
+    <h2 class="mt-3 text-muted">
+      Sua denúncia pode salvar vidas. Reporte casos de abuso, negligência ou maus-tratos contra animais de forma segura e anônima.
+    </h2>
+  </section>
+
+  <!-- ABAS -->
+  <section class="container mb-5">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fazer" type="button">Fazer Denúncia</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#emergencia" type="button">Emergência</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#recursos" type="button">Recursos</button>
+      </li>
+    </ul>
+
+    <div class="tab-content p-4 bg-white border border-top-0 shadow-sm">
+
+      <!-- ABA 1 - FAZER DENÚNCIA -->
+      <div class="tab-pane fade show active" id="fazer">
+
+        <!-- ALERTA -->
+        <div class="alerta-box p-4 mb-4 bg-light border rounded d-flex align-items-start">
+          <i class="bi bi-exclamation-triangle-fill me-3"></i>
+          <div>
+            <h5 class="fw-bold text-danger">Importante:</h5>
+            Em casos de emergência ou maus-tratos graves em andamento, ligue imediatamente para 190 (Polícia Militar) ou use a aba "Emergência" para contatos diretos.
+          </div>
+        </div>
+
+        <!-- INFORMAÇÃO GERAL -->
+        <div class="mb-4">
+          <h4 class="fw-bold">Formulário de Denúncia</h4>
+          <p class="text-muted">Todas as informações são confidenciais. Você pode optar por permanecer anônimo.</p>
+        </div>
+
+        <form class="row g-4" id="form-denuncia">
+
+          <!-- TIPOS DE MAUS-TRATOS -->
+          <div class="col-12">
+            <h5 class="fw-bold">Tipos de Maus-Tratos</h5>
+            <div class="row">
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t1"><label class="form-check-label" for="t1"> Agressão física</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t2"><label class="form-check-label" for="t2"> Negligência alimentar</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t3"><label class="form-check-label" for="t3"> Falta de água</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t4"><label class="form-check-label" for="t4"> Condições insalubres</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t5"><label class="form-check-label" for="t5"> Animais acorrentados</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t6"><label class="form-check-label" for="t6"> Falta de abrigo adequado</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t7"><label class="form-check-label" for="t7"> Abandono</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t8"><label class="form-check-label" for="t8"> Trabalho forçado</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t9"><label class="form-check-label" for="t9"> Brigas organizadas</label></div></div>
+              <div class="col-md-4 mb-2"><div class="form-check"><input class="form-check-input" type="checkbox" id="t10"><label class="form-check-label" for="t10"> Outros</label></div></div>
+            </div>
+          </div>
+
+          <!-- INFORMAÇÕES DO ANIMAL -->
+          <div class="col-12">
+            <h5 class="fw-bold">Informações do(s) Animal(is)</h5>
+            <div class="row g-3">
+              <div class="col-md-4"><input class="form-control" placeholder="Tipo do animal (ex: Cachorro)"></div>
+              <div class="col-md-4"><input class="form-control" placeholder="Quantidade"></div>
+              <div class="col-md-4"><input class="form-control" placeholder="Condição atual"></div>
+              <div class="col-12"><textarea class="form-control" rows="3" placeholder="Descrições adicionais..."></textarea></div>
+            </div>
+          </div>
+
+          <!-- LOCAL DA OCORRÊNCIA -->
+          <div class="col-12">
+            <h5 class="fw-bold">Local da Ocorrência</h5>
+            <div class="row g-3">
+              <div class="col-md-3"><input class="form-control" placeholder="Estado"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Cidade"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Endereço completo"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Pontos de referência"></div>
+            </div>
+          </div>
+
+          <!-- DETALHES DA OCORRÊNCIA -->
+          <div class="col-12">
+            <h5 class="fw-bold">Detalhes da Ocorrência</h5>
+            <textarea class="form-control mb-3" rows="3" placeholder="Descrição detalhada..."></textarea>
+            <div class="row g-3">
+              <div class="col-md-3"><input class="form-control" type="date"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Hora aproximada"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Frequência (ex: ocorrência única, diária)"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Testemunhas (nomes ou contatos)"></div>
+            </div>
+          </div>
+
+          <!-- EVIDÊNCIAS -->
+          <div class="col-12">
+            <h5 class="fw-bold">Evidências (opcional)</h5>
+            <div class="row g-3">
+              <div class="col-md-4"><label class="form-label small">Imagens</label><input type="file" class="form-control" accept="image/*" multiple></div>
+              <div class="col-md-4"><label class="form-label small">Vídeos</label><input type="file" class="form-control" accept="video/*" multiple></div>
+              <div class="col-md-4"><label class="form-label small">Documentos</label><input type="file" class="form-control" accept="application/pdf" multiple></div>
+            </div>
+          </div>
+
+          <!-- SUAS INFORMAÇÕES -->
+          <div class="col-12">
+            <h5 class="fw-bold">Suas Informações</h5>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="anonima">
+              <label class="form-check-label" for="anonima">Quero fazer uma denúncia anônima</label>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-md-3"><input class="form-control" placeholder="Seu nome"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="E-mail"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Telefone"></div>
+              <div class="col-md-3"><input class="form-control" placeholder="Sua relação com o caso"></div>
+              <div class="col-12"><textarea class="form-control" rows="3" placeholder="Informações adicionais..."></textarea></div>
+            </div>
+          </div>
+
+          <!-- NOTA LEGAL -->
+          <div class="col-12 p-3 bg-light border rounded">
+            <p class="small text-muted mb-0">
+              <strong>Nota Legal:</strong> Denúncias falsas podem constituir crime. Esta denúncia será encaminhada às autoridades competentes e pode resultar em investigação criminal. Lei nº 9.605/98 (Lei de Crimes Ambientais) - Art. 32: "Praticar ato de abuso, maus-tratos, ferir ou mutilar animais" - Pena: detenção de 3 meses a 1 ano, e multa.
+            </p>
+          </div>
+
+          <!-- CONFIRMAÇÃO -->
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="confirmo">
+              <label class="form-check-label" for="confirmo">Confirmo que as informações fornecidas são verdadeiras e estou ciente das consequências legais de uma denúncia falsa.</label>
+            </div>
+          </div>
+
+          <!-- BOTÃO -->
+          <div class="col-12">
+            <button class="btn btn-danger w-100 py-2 fw-bold" type="submit">Enviar Denúncia</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- ABA 2 - EMERGÊNCIA -->
+      <div class="tab-pane fade" id="emergencia">
+        <h4 class="fw-bold text-danger mb-3">EMERGÊNCIA</h4>
+        <p>Se você está presenciando maus-tratos graves acontecendo agora, ligue imediatamente para os números abaixo.</p>
+
+        <div class="row g-4 my-4">
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm h-100">
+              <h5 class="fw-bold">Polícia Militar Ambiental</h5>
+              <h3 class="text-danger fw-bold">190</h3>
+              <p class="text-muted mb-0">Para emergências de maus-tratos graves.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm h-100">
+              <h5 class="fw-bold">IBAMA - Linha Verde</h5>
+              <h4 class="fw-bold">0800 618 080</h4>
+              <p class="text-muted mb-0">Denúncias de crimes ambientais e maus-tratos.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-3 shadow-sm h-100">
+              <h5 class="fw-bold">Ministério Público de São Paulo</h5>
+              <h5 class="fw-bold">(11) 3119-9000</h5>
+              <p class="text-muted mb-0">Promotoria de Meio Ambiente</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-light border rounded">
+          <h6 class="fw-bold">Antes de Ligar</h6>
+          <p class="mb-1">Tenha em mãos:</p>
+          <ul>
+            <li>Endereço exato da ocorrência</li>
+            <li>Descrição dos animais envolvidos</li>
+            <li>Detalhes do que está acontecendo</li>
+            <li>Seu nome e telefone para contato</li>
+          </ul>
+          <p class="mb-0"><strong>Mantenha-se seguro:</strong> Não tente intervir fisicamente se isso colocar você ou outras pessoas em risco.</p>
+        </div>
+
+      </div>
+
+      <!-- ABA 3 - RECURSOS -->
+      <div class="tab-pane fade" id="recursos">
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h5 class="fw-bold">Como Ser um Protetor dos Animais</h5>
+            <div class="card p-3 mb-3 shadow-sm">
+              <h6 class="fw-bold">Esteja Atento</h6>
+              <p class="mb-0">Observe sinais de maus-tratos em animais do seu bairro e denuncie quando necessário.</p>
+            </div>
+            <div class="card p-3 mb-3 shadow-sm">
+              <h6 class="fw-bold">Eduque</h6>
+              <p class="mb-0">Compartilhe informações sobre bem-estar animal e conscientize outras pessoas.</p>
+            </div>
+            <div class="card p-3 mb-3 shadow-sm">
+              <h6 class="fw-bold">Apoie</h6>
+              <p class="mb-0">Voluntarie-se ou doe para organizações de proteção animal da sua região.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h5 class="fw-bold">Marco Legal - Proteção Animal no Brasil</h5>
+            <div class="card p-3 shadow-sm">
+              <p class="mb-1"><strong>Legislação Principal</strong></p>
+              <ul class="mb-2">
+                <li>Lei nº 9.605/98: Lei de Crimes Ambientais - Art. 32: Crime de maus-tratos (3 meses a 1 ano de prisão)</li>
+                <li>Decreto nº 6.514/08: Regulamenta as infrações ambientais</li>
+                <li>Constituição Federal: Art. 225 - Proteção ao meio ambiente</li>
+              </ul>
+              <p class="mb-1"><strong>O que Configura Maus-Tratos</strong></p>
+              <ul>
+                <li>Agressão física ou psicológica</li>
+                <li>Privação de água, comida ou abrigo</li>
+                <li>Trabalho excessivo ou em condições inadequadas</li>
+                <li>Abandono ou negligência</li>
+                <li>Uso em espetáculos que causem sofrimento</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <h5 class="fw-bold mb-3">Organizações e Recursos</h5>
+        <div class="row" id="feed-organizacoes">
+          <!-- Exemplo inicial de organização -->
+          <div class="col-md-4 mb-4">
+            <div class="card org-card shadow-sm">
+              <img src="https://placebear.com/400/300" class="card-img-top" alt="Organização">
+              <div class="card-body">
+                <h6 class="fw-bold">Protetores Unidos</h6>
+                <p class="text-muted small mb-2">ONG de resgate e acolhimento</p>
+                <a href="#" class="btn btn-outline-success btn-sm">Visitar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Simples função para simular rolagem infinita adicionando cards de exemplo
+    function criarCardOrganizacao(i) {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-4';
+      col.innerHTML = `
+        <div class="card org-card shadow-sm">
+          <img src="https://placebear.com/400/30${i % 10}" class="card-img-top" alt="Organização">
+          <div class="card-body">
+            <h6 class="fw-bold">Organização ${i}</h6>
+            <p class="text-muted small mb-2">Serviços de apoio e resgate</p>
+            <a href="#" class="btn btn-outline-success btn-sm">Visitar</a>
+          </div>
+        </div>
+      `;
+      return col;
+    }
+
+    let loadingOrgs = false;
+    let orgCount = 1;
+    window.addEventListener('scroll', () => {
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 800;
+      if (nearBottom && !loadingOrgs) {
+        loadingOrgs = true;
+        const feed = document.getElementById('feed-organizacoes');
+        // adiciona 3 novos cards de exemplo
+        for (let i = 0; i < 3; i++) {
+          orgCount++;
+          feed.appendChild(criarCardOrganizacao(orgCount));
+        }
+        setTimeout(() => { loadingOrgs = false; }, 600);
+      }
+    });
+  </script>
+
+</body>
+</html>

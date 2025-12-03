@@ -1,0 +1,45 @@
+<!-- components/navbar.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-success" href="index.html">🐾 Petlar</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="/paginas/index.html">Buscar Pets</a></li>
+          <li class="nav-item"><a class="nav-link" href="/paginas/cadastro.html">Cadastrar Pets</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/paginas/perdidos.html">Pets Perdidos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/paginas/vacinacao.html">Vacinação</a></li>
+          <li class="nav-item"><a class="nav-link" href="/paginas/denuncia.html">Denunciar Maus Tratos</a></li>
+
+          <li class="nav-item ms-3" id="login-area">
+
+           <!-- VISUAL QUANDO NÃO ESTÁ LOGADO -->
+           <button class="btn btn-primary d-flex align-items-center" id="btn-login">
+            <i class="bi bi-box-arrow-in-right me-2" ></i> Entrar
+           </button>
+
+           <!-- VISUAL QUANDO ESTÁ LOGADO -->
+          <div class="dropdown d-none" id="user-dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" 
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="user-photo" src="https://via.placeholder.com/35" class="rounded-circle me-2">
+              <span id="user-name" class="fw-semibold">Usuário</span>
+           </a>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="/pages/perfil.html">Perfil</a></li>
+              <li><a class="dropdown-item" href="/pages/configuracoes.html">Configurações</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#" id="logout-btn">Sair</a></li>
+            </ul>
+           </div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
