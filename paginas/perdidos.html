@@ -141,14 +141,19 @@
 
     </div>
   </section>
-<script src="../js/auth.js"></script>
-  <script>
-    fetch("../componentes/navbar.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("navbar-placeholder").innerHTML = html;
-        atualizarNavbar(); // <-- ESSENCIAL
-      });
+<script>
+  fetch("../componentes/navbar.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("navbar-placeholder").innerHTML = html;
+
+    // Só depois de injetar a navbar no DOM:
+    const script = document.createElement("script");
+    script.src = "../js/auth.js";
+    document.body.appendChild(script);
+
+    script.onload = () => atualizarNavbar();
+  });
   </script>
 
 

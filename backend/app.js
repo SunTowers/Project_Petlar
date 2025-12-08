@@ -70,6 +70,12 @@ app.post("/login", (req, res) => {
 
     return res.json({
       mensagem: "Login efetuado com sucesso!",
+      usuario: {
+      id: usuario.id,
+      nome: usuario.nome,
+      email: usuario.email,
+      foto_perfil: "/img/iconeDePerfil.png"
+      },
       token
     });
   });

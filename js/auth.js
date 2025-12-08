@@ -42,7 +42,7 @@ function logout() {
 // LOGIN
 // ================================
 async function fazerLogin(event) {
-    event.preventDefault();
+    event?.preventDefault?.();
 
     const email = document.getElementById("login-email").value;
     const senha = document.getElementById("login-senha").value;
@@ -60,7 +60,38 @@ async function fazerLogin(event) {
         return;
     }
 
-    salvarLogin(dados.token, dados.usuario);
+    // dados.token provavelmente existe
+    const token = dados.token;
+
+    // dados.usuario pode vir ou não. Protegemos isso.
+    let usuario = dados.usuario ?? null;
+
+    // Se o backend não retornou usuario, tentamos buscar por email como fallback
+    if (!usuario) {
+        try {
+            const listaResp = await fetch(`${API_URL}/usuarios`);
+            if (listaResp.ok) {
+                const lista = await listaResp.json();
+                usuario = lista.find(u => u.email === email) || null;
+            }
+        } catch (err) {
+            console.warn("Não foi possível obter usuário por fallback:", err);
+        }
+    }
+
+    // Limpa localStorage corrompido antigo (proteção)
+    if (localStorage.getItem("usuario") === "undefined") localStorage.removeItem("usuario");
+
+    // Salva token e, se houver, usuario
+    localStorage.setItem("token", token || "");
+    if (usuario) {
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+    } else {
+        // salva só token (ou salva um objeto mínimo)
+        localStorage.removeItem("usuario");
+    }
+
+    // redireciona
     window.location.href = "/paginas/index.html";
 }
 
@@ -118,7 +149,13 @@ function atualizarNavbar() {
         areaLogin.innerHTML = `
             <div class="dropdown">
               <button class="btn btn-light dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                <img src="https://via.placeholder.com/35" class="rounded-circle me-2">
+                <img 
+                     src="${usuario.foto_perfil}" 
+                    class="rounded-circle me-2"
+                     width="35"
+                    height="35"
+                    style="object-fit: cover;"
+                >
                 <span>${usuario.nome}</span>
               </button>
 
